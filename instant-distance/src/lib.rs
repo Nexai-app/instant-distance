@@ -255,7 +255,10 @@ where
 
         assert!(points.len() < u32::MAX as usize);
         let mut shuffled = (0..points.len())
-            .map(|i| (PointId(rng.gen_range(0..points.len() as u32)), i))
+            .map(|i| 
+                // (PointId(rng.gen_range(0..points.len() as u32)), i)
+                (PointId(0), i)
+            )
             .collect::<Vec<_>>();
         shuffled.sort_unstable();
 
