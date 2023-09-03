@@ -105,7 +105,8 @@ impl Default for Builder {
             ef_construction: 100,
             heuristic: Some(Heuristic::default()),
             ml: 1.0 / (M as f32).ln(),
-            seed: rand::random(),
+            // seed: rand::random(),
+            seed: 20,
             #[cfg(feature = "indicatif")]
             progress: None,
         }
@@ -256,7 +257,7 @@ where
         assert!(points.len() < u32::MAX as usize);
         let mut shuffled = (0..points.len())
             .map(|i| 
-                // (PointId(rng.gen_range(0..points.len() as u32)), i)
+                // (PointId(rngagen_range(0..points.len() as u32)), i)
                 (PointId(0), i)
             )
             .collect::<Vec<_>>();
